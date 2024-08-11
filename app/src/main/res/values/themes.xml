@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Todo_app" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primarySky</item>
+        <item name="colorPrimaryVariant">@color/secondary</item>
+        <item name="colorOnPrimary">@color/pureWhite</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primarySky</item>
+        <item name="colorSecondaryVariant">@color/secondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="primaryFont"
+        >
+        <item name="fontFamily">@font/poppins_bold </item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+
+    </style>
+    <style name="secondaryFont"
+        >
+    <item name="fontFamily">@font/poppins_regular </item>
+    <item name="android:textSize">15sp</item>
+    <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+    <style name="customTextAppearance"
+        >
+        <item name="fontFamily">@font/poppins_regular </item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+</resources>

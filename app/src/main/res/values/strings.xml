@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">todo_app</string>
+    <string name="appBarText">To Do List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="language">language</string>
+    <string name="mode">Mode</string>
+    <string name="english">English</string>
+    <string name="light">Light</string>
+    <array name="dropdownItemsLan">
+        <item> english </item>
+        <item> arabic </item>
+    </array>
+</resources>
