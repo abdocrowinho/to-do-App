@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="50dp"
+    app:cardCornerRadius="50dp"
+    app:cardElevation="0dp"
+    app:strokeColor="?attr/colorPrimary"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="30dp"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:id="@+id/Tv_addTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:text="@string/add_task"
+            android:textColor="#5D9CEC"
+            style="@style/primaryFont"
+            android:textSize="18sp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_tittle"
+            android:layout_marginHorizontal="20dp"
+            android:paddingBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Tv_addTask"
+            app:boxStrokeColor="@color/text_input_layout_stroke_color"
+            app:boxStrokeWidth="2dp"
+
+            app:boxBackgroundColor="?attr/colorOnPrimary"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Et_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="enter your task"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/Tv_hintSelectTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/til_tittle"
+            android:text="Select time "
+            app:layout_constraintStart_toStartOf="@id/til_tittle"
+            style="@style/primaryFont"
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="18sp"/>
+        <TextView
+
+            android:id="@+id/selectedTime"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Tv_hintSelectTime"
+            android:text="12:30 AM "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Bt_done"
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="3dp"
+            app:cornerRadius="50dp"
+            android:backgroundTint="#5D9CEC"
+            app:layout_constraintTop_toBottomOf="@id/selectedTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".15"
+            app:layout_constraintHeight_percent=".25"
+            app:icon="@drawable/ic_check"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>
