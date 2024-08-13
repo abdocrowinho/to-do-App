@@ -1,4 +1,4 @@
-package com.example.todo_app.ui.views.fragments
+package com.example.todo_app.ui.views.fragments.main_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

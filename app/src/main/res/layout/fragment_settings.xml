@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Todo_app"
-    tools:context=".ui.views.fragments.SettingsFragment">
+    tools:context=".ui.views.fragments.settings_fragment.SettingsFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/appBarGuideLine"

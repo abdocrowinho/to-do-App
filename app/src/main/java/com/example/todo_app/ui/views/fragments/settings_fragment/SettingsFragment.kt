@@ -1,11 +1,10 @@
-package com.example.todo_app.ui.views.fragments
+package com.example.todo_app.ui.views.fragments.settings_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.todo_app.R
 import com.example.todo_app.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
