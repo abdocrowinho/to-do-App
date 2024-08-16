@@ -6,8 +6,14 @@
     <string name="mode">Mode</string>
     <string name="english">English</string>
     <string name="light">Light</string>
+    <string name="edit_task">Edit Task</string>
+    <string name="details_text">this is details</string>
+    <string name="select_time">select time</string>
+    <string name="save_change">save change</string>
+    <string name="add_task">Add Task</string>
+    <string name="todo_list">ToDo List</string>
     <array name="dropdownItemsLan">
-        <item> english </item>
-        <item> arabic </item>
+        <item>english</item>
+        <item>arabic</item>
     </array>
 </resources>

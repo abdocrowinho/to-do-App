@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Todo_app" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
@@ -12,12 +12,41 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
     </style>
+    <style name="ButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:backgroundTint">@color/primarySky</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+
+
     <style name="primaryFont"
         >
         <item name="fontFamily">@font/poppins_bold </item>
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
+
+
+
+
+    </style>
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- border color -->
+        <item name="boxStrokeColor">@color/text_input_layout_stroke_color</item>
+
+        <!-- The color of the label when it is collapsed and the text field is active -->
 
     </style>
     <style name="secondaryFont"
