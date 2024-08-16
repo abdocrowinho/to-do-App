@@ -11,6 +11,7 @@
     <string name="select_time">select time</string>
     <string name="save_change">save change</string>
     <string name="add_task">Add Task</string>
+    <string name="todo_list">ToDo List</string>
     <array name="dropdownItemsLan">
         <item>english</item>
         <item>arabic</item>

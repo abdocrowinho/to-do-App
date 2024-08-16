@@ -2,11 +2,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+
 }
 
 android {
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
     namespace = "com.example.todo_app"
     compileSdk = 34
@@ -41,10 +44,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room.ktx)
     implementation(libs.material.calendarview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    kapt(libs.androidx.room.compiler)
+
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
