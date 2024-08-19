@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.parcelize)
     id("kotlin-kapt")
 
 }
@@ -15,6 +16,11 @@ android {
     compileSdk = 34
 
     defaultConfig {
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
         applicationId = "com.example.todo_app"
         minSdk = 24
         targetSdk = 34

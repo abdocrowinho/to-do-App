@@ -9,8 +9,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    >
+    app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,18 +38,18 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".98" />
 
+
         <TextView
-            android:textSize="18sp"
             android:id="@+id/Tv_taskName"
             style="@style/primaryFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/Tv_timer"
             app:layout_constraintStart_toStartOf="@id/customStartParent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="play bascket ball" />
-
 
         <TextView
             android:id="@+id/Tv_timer"
@@ -58,45 +57,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnSecondary"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/clockIcon"
             app:layout_constraintTop_toBottomOf="@+id/Tv_taskName"
-            tools:text="11:30 Am"
-            android:textSize="13sp"
-            />
+            tools:text="11:30 Am" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textAllCaps="false"
             app:cornerRadius="7dp"
+            app:icon="@drawable/ic_check"
+            app:iconSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/customEndParent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent=".22"
-            app:icon="@drawable/ic_check"
-            android:paddingStart="25dp"
-            app:iconSize="30dp"
+
             />
 
         <ImageView
-            android:paddingEnd="10dp"
             android:id="@+id/clockIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            android:src="@drawable/clock"
             app:layout_constraintStart_toStartOf="@id/customStartParent"
-            app:layout_constraintTop_toTopOf="@id/Tv_timer"
-            android:src="@drawable/clock"/>
+            app:layout_constraintTop_toTopOf="@id/Tv_timer" />
+
         <View
-            app:circularflow_defaultRadius="20dp"
             android:id="@+id/verticalDivider"
-            android:layout_marginVertical="20dp"
             android:layout_width="4dp"
             android:layout_height="match_parent"
+            android:layout_marginVertical="20dp"
             android:background="?attr/colorPrimary"
-            app:layout_constraintStart_toStartOf="@id/verticalView"/>
+            app:circularflow_defaultRadius="20dp"
+            app:layout_constraintStart_toStartOf="@id/verticalView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </com.google.android.material.card.MaterialCardView>

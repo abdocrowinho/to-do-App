@@ -1,143 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/Theme.Todo_app"
-    tools:context=".ui.views.fragments.settings_fragment.SettingsFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/appBarGuideLine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15041128" />
+    <data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/startFields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25029376" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/end_fields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".50" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/startOfFields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/endOfFields"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".9" />
-
-    <TextView
-        style="@style/secondaryFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-20dp"
-        android:text="@string/language"
-        app:layout_constraintBottom_toBottomOf="@id/startFields"
-        app:layout_constraintStart_toStartOf="@id/startOfFields"
-        app:layout_constraintTop_toTopOf="@id/appBarGuideLine" />
-
-    <TextView
-        style="@style/secondaryFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-20dp"
-        android:text="@string/mode"
-        app:layout_constraintBottom_toBottomOf="@id/mode_Til"
-        app:layout_constraintStart_toStartOf="@id/startOfFields"
-        app:layout_constraintTop_toTopOf="@id/lan_Til" />
-
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@id/appBarGuideLine"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:theme="@style/Theme.Todo_app"
+        tools:context=".ui.views.fragments.settings_fragment.SettingsFragment">
 
-        <TextView
-
-            style="@style/primaryFont"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/appBarGuideLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Settings"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15041128" />
 
-            app:layout_constraintStart_toStartOf="parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startFields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25029376" />
 
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_fields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startOfFields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endOfFields"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+        <TextView
+            style="@style/secondaryFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp"
+            android:text="@string/language"
+            app:layout_constraintBottom_toBottomOf="@id/startFields"
+            app:layout_constraintStart_toStartOf="@id/startOfFields"
+            app:layout_constraintTop_toTopOf="@id/appBarGuideLine" />
+
+        <TextView
+            style="@style/secondaryFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp"
+            android:text="@string/mode"
+            app:layout_constraintBottom_toBottomOf="@id/mode_Til"
+            app:layout_constraintStart_toStartOf="@id/startOfFields"
+            app:layout_constraintTop_toTopOf="@id/lan_Til" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/appBarGuideLine"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+
+                style="@style/primaryFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Settings"
+
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lan_Til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:enabled="true"
+            app:boxBackgroundColor="@color/pureWhite"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxStrokeWidth="2dp"
+            app:endIconTint="?attr/colorPrimary"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="@id/endOfFields"
+            app:layout_constraintStart_toStartOf="@id/startOfFields"
+            app:layout_constraintTop_toBottomOf="@id/startFields">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/english"
+                android:textColor="?attr/colorPrimary"
+                app:simpleItems="@array/dropdownItemsLan" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mode_Til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:enabled="true"
+            app:boxBackgroundColor="@color/pureWhite"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxStrokeWidth="2dp"
+            app:endIconTint="?attr/colorPrimary"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/end_fields"
+            app:layout_constraintEnd_toEndOf="@id/endOfFields"
+            app:layout_constraintStart_toStartOf="@id/startOfFields">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/mode_Til"
+                android:text="@string/light"
+                android:textColor="?attr/colorPrimary"
+                app:simpleItems="@array/dropdownItemsLan" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lan_Til"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:enabled="true"
-        app:boxBackgroundColor="@color/pureWhite"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeColor="?attr/colorPrimary"
-        app:boxStrokeWidth="2dp"
-        app:endIconTint="?attr/colorPrimary"
-        app:hintEnabled="true"
-        app:layout_constraintEnd_toEndOf="@id/endOfFields"
-        app:layout_constraintStart_toStartOf="@id/startOfFields"
-        app:layout_constraintTop_toBottomOf="@id/startFields">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/english"
-            android:textColor="?attr/colorPrimary"
-            app:simpleItems="@array/dropdownItemsLan" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mode_Til"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginHorizontal="10dp"
-        android:enabled="true"
-        app:boxBackgroundColor="@color/pureWhite"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeColor="?attr/colorPrimary"
-        app:boxStrokeWidth="2dp"
-        app:endIconTint="?attr/colorPrimary"
-        app:hintEnabled="true"
-        app:layout_constraintBottom_toBottomOf="@id/end_fields"
-        app:layout_constraintEnd_toEndOf="@id/endOfFields"
-        app:layout_constraintStart_toStartOf="@id/startOfFields">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:labelFor="@id/mode_Til"
-            android:text="@string/light"
-            android:textColor="?attr/colorPrimary"
-            app:simpleItems="@array/dropdownItemsLan" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
