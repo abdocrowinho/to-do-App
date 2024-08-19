@@ -8,4 +8,5 @@
     <color name="focused_color">#5D9CEC</color>
     <color name="disabled_color">#000000</color>
     <color name="unfocused_color">#000000</color>
+    <color name="doneColor">#57965C</color>
 </resources>
