@@ -174,11 +174,15 @@
                         android:layout_height="match_parent"
                         android:hint="@string/select_time"
                         android:inputType="none"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Bt_SaveChange"
                     style="@style/primaryFont"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
