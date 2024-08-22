@@ -2,12 +2,6 @@ package com.example.todo_app.ui.views.EditTask
 
 import android.app.TimePickerDialog
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.TimePicker
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.todo_app.DataBase.AppDataBase
 import com.example.todo_app.DataBase.model.Task
 import com.example.todo_app.Excitation.formatTimeText
@@ -68,7 +62,7 @@ class EditTask : BaseActivity<ActivityEditTaskBinding>() {
         task.description = if (binding.EtDetails.text
                 .isNullOrBlank()
         ) task.description else (binding.EtDetails.text.toString())
-        task.time = time.formatTimeText().ifBlank { task.time }
+        task.time = if(task.time==binding.EtTime.text.toString()||binding.EtTime.text.isNullOrBlank()) task.time else binding.EtTime.text.toString()
     AppDataBase.getInstance().tasksDao().updateTask(task)
 
 

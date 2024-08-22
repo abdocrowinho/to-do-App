@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     kapt(libs.androidx.room.compiler)
-
+    implementation (libs.swipelayout)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)

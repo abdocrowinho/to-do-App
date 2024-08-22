@@ -9,4 +9,6 @@
     <color name="disabled_color">#000000</color>
     <color name="unfocused_color">#000000</color>
     <color name="doneColor">#57965C</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="red">#ff5722</color>
 </resources>
