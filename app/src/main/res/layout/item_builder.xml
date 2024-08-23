@@ -107,6 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
+                android:paddingStart="0dp"
                 android:src="@drawable/clock"
                 app:layout_constraintStart_toStartOf="@id/customStartParent"
                 app:layout_constraintTop_toTopOf="@id/Tv_timer" />

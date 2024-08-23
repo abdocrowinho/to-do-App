@@ -4,7 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="language">language</string>
     <string name="mode">Mode</string>
-    <string name="english">English</string>
+    <string name="english" translatable="false">English</string>
     <string name="light">Light</string>
     <string name="edit_task">Edit Task</string>
     <string name="details_text">this is details</string>
@@ -12,6 +12,11 @@
     <string name="save_change">save change</string>
     <string name="add_task">Add Task</string>
     <string name="todo_list">ToDo List</string>
+    <string name="tittle">tittle</string>
+    <string name="enter_your_task">enter your task</string>
+    <string name="description">description</string>
+    <string name="selecte_date">selecte date</string>
+    <string name="settings">Settings</string>
     <array name="dropdownItemsLan">
         <item>english</item>
         <item>arabic</item>
