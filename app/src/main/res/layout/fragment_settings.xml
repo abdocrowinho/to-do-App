@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Settings"
+                android:text="@string/settings"
 
                 app:layout_constraintStart_toStartOf="parent"
 
@@ -110,6 +110,8 @@
             app:layout_constraintTop_toBottomOf="@id/startFields">
 
             <AutoCompleteTextView
+                android:focusableInTouchMode="false"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/english"
@@ -136,6 +138,8 @@
             app:layout_constraintStart_toStartOf="@id/startOfFields">
 
             <AutoCompleteTextView
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/mode_Til"

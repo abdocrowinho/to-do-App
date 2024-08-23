@@ -8,9 +8,11 @@ import com.example.todo_app.constants.Constant
 import com.example.todo_app.DataBase.model.Task
 import com.example.todo_app.R
 import com.example.todo_app.databinding.ItemBuilderBinding
+import com.zerobranch.layout.SwipeLayout
 
 class TasksAdapter(private var tasks: MutableList<Task>? = null) :
     RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
+    var lastOpenSwipeLayout: SwipeLayout? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemBuilderBinding.inflate(
@@ -24,24 +26,16 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
         tasks?.size ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         val task: Task? = tasks?.get(position)
         holder.binding.TvTaskName.text = task?.tittle
         holder.binding.TvTimer.text = "${task?.time}"
         if (task?.isDone == true) {
-            holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.doneColor))
-            holder.binding.checkButton.icon = null
-            holder.binding.checkButton.text = "Done"
-            holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.doneColor))
-            holder.binding.TvTimer.setTextColor(Color.parseColor(Constant.doneColor))
+            doneTask(holder)
 
         } else {
-            holder.binding.checkButton.setIconResource(R.drawable.ic_check)
-            holder.binding.checkButton.text = null
-            holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.notDoneColor))
-            holder.binding.checkButton.setBackgroundColor(Color.parseColor(Constant.notDoneColor))
-            holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.notDoneColor))
-            holder.binding.TvTimer.setTextColor(Color.BLACK)
 
+            undoneTask(holder)
         }
         if (onCheckButtonClickListener != null) {
             holder.binding.checkButton.setOnClickListener {
@@ -49,12 +43,27 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
             }
         }
         if (onItemViewClickListener != null) {
-            holder.itemView.setOnClickListener {
+            holder.binding.dragItem.setOnClickListener {
                 onItemViewClickListener?.onItemClick(position, task!!)
             }
         }
 
+        holder.binding.swiper.setOnActionsListener(object : SwipeLayout.SwipeActionsListener {
+            override fun onOpen(direction: Int, isContinuous: Boolean) {
+                if (lastOpenSwipeLayout != null && lastOpenSwipeLayout != holder.binding.swiper) {
+                    lastOpenSwipeLayout?.close(true);
+                }
+                lastOpenSwipeLayout = holder.binding.swiper
+            }
 
+            override fun onClose() {
+            }
+        })
+        if (onDeleteItemClickListener != null) {
+            holder.binding.rightView.setOnClickListener {
+                onDeleteItemClickListener?.onItemClick(position, task!!)
+            }
+        }
     }
 
     fun submitNewList(tasks: MutableList<Task>) {
@@ -63,7 +72,8 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
     }
 
     var onCheckButtonClickListener: OnClick? = null
-     var onItemViewClickListener: OnClick? = null
+    var onItemViewClickListener: OnClick? = null
+    var onDeleteItemClickListener: OnClick? = null
 
     fun submitNewItem(task: Task) {
         tasks?.add(task)
@@ -76,4 +86,21 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
 
 
     class ViewHolder(val binding: ItemBuilderBinding) : RecyclerView.ViewHolder(binding.root)
+
+    private fun doneTask(holder: ViewHolder) {
+        holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.doneColor))
+        holder.binding.checkButton.icon = null
+        holder.binding.checkButton.text = "Done"
+        holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.doneColor))
+        holder.binding.TvTimer.setTextColor(Color.parseColor(Constant.doneColor))
+    }
+
+    private fun undoneTask(holder: ViewHolder) {
+        holder.binding.checkButton.setIconResource(R.drawable.ic_check)
+        holder.binding.checkButton.text = null
+        holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.notDoneColor))
+        holder.binding.checkButton.setBackgroundColor(Color.parseColor(Constant.notDoneColor))
+        holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.notDoneColor))
+        holder.binding.TvTimer.setTextColor(Color.BLACK)
+    }
 }
