@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-20dp"
             android:text="@string/language"
+            android:textColor="?attr/colorSecondaryVariant"
             app:layout_constraintBottom_toBottomOf="@id/startFields"
             app:layout_constraintStart_toStartOf="@id/startOfFields"
             app:layout_constraintTop_toTopOf="@id/appBarGuideLine" />
@@ -64,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="-20dp"
+            android:textColor="?attr/colorSecondaryVariant"
             android:text="@string/mode"
             app:layout_constraintBottom_toBottomOf="@id/mode_Til"
             app:layout_constraintStart_toStartOf="@id/startOfFields"
@@ -110,11 +112,11 @@
             app:layout_constraintTop_toBottomOf="@id/startFields">
 
             <AutoCompleteTextView
+                android:id="@+id/lan_act"
                 android:focusableInTouchMode="false"
                 android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/english"
                 android:textColor="?attr/colorPrimary"
                 app:simpleItems="@array/dropdownItemsLan" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -138,14 +140,14 @@
             app:layout_constraintStart_toStartOf="@id/startOfFields">
 
             <AutoCompleteTextView
+                android:id="@+id/act_mode"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/mode_Til"
-                android:text="@string/light"
                 android:textColor="?attr/colorPrimary"
-                app:simpleItems="@array/dropdownItemsLan" />
+                app:simpleItems="@array/dropdownItemsMod" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

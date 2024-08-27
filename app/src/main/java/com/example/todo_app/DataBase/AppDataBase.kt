@@ -4,16 +4,18 @@ import android.app.Application
 import android.content.Context
 import androidx.room.AutoMigration
 import androidx.room.Database
+import androidx.room.RenameColumn
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.todo_app.DataBase.Dao.TaskDao
 import com.example.todo_app.DataBase.model.Task
 
 @Database(
-    entities = [Task::class], exportSchema = true, version = 4,
-    autoMigrations = [AutoMigration(1, 2), AutoMigration(2, 3), AutoMigration(3, 4)]
+    entities = [Task::class], exportSchema = true, version = 4 , autoMigrations = [AutoMigration(2,3),AutoMigration(3,4,AppDataBase.MIGRATION3_4sepc::class)]
+
 
 )
 abstract class AppDataBase : RoomDatabase() {
@@ -36,13 +38,22 @@ abstract class AppDataBase : RoomDatabase() {
                 ).allowMainThreadQueries()
                     .build()
             }
-        }
-//val MIGRATION_1_2 = object : Migration(1,2){
-//    override fun migrate(db: SupportSQLiteDatabase) {
-//db.execSQL("ALTER TABLE Task ADD COLUMN number INTEGER DEFAULT NULL ")    }
 
+
+        }
+
+
+        }
+    @RenameColumn(tableName = "Task" ,
+        fromColumnName = "date",
+        toColumnName = "dateTime"
+        )
+    class MIGRATION3_4sepc : AutoMigrationSpec
     }
 
 
-}
+
+
+
+
 

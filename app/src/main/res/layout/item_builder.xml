@@ -7,7 +7,8 @@
     app:rightItem="@id/right_view"
     app:swipeDirection="left"
     android:layout_marginVertical="15dp"
-    app:isFreeDragAfterOpen="true"
+    app:isFreeDragAfterOpen="false"
+    app:isTogether="true"
     android:background="@color/transparent"
     android:id="@+id/swiper"
     >
@@ -88,17 +89,20 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/checkButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="?attr/colorPrimary"
                 android:textAllCaps="false"
                 app:cornerRadius="7dp"
                 app:icon="@drawable/ic_check"
-                app:iconSize="30dp"
+                app:elevation="0dp"
+                android:elevation="0dp"
+                android:text=""
+                android:paddingHorizontal="-10dp"
+                app:iconGravity="textStart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/customEndParent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent=".22"
 
                 />
 
@@ -108,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
                 android:paddingStart="0dp"
+
                 android:src="@drawable/clock"
                 app:layout_constraintStart_toStartOf="@id/customStartParent"
                 app:layout_constraintTop_toTopOf="@id/Tv_timer" />

@@ -1,5 +1,7 @@
 package com.example.todo_app.ui.views.fragments.main_fragment
 
+import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -87,15 +89,23 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
 
     class ViewHolder(val binding: ItemBuilderBinding) : RecyclerView.ViewHolder(binding.root)
 
-    private fun doneTask(holder: ViewHolder) {
+    private fun doneTask(holder: ViewHolder ) {
         holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.doneColor))
         holder.binding.checkButton.icon = null
-        holder.binding.checkButton.text = "Done"
+        holder.binding.checkButton.text = holder.itemView.context.resources.getString(R.string.done)
+        holder.binding.checkButton.setBackgroundColor(holder.itemView.context.getColor(R.color.pureWhite))
+        holder.binding.checkButton.elevation = 0F
+
+        holder.binding.checkButton.setTextColor(Color.parseColor(Constant.doneColor))
+
+
+
         holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.doneColor))
         holder.binding.TvTimer.setTextColor(Color.parseColor(Constant.doneColor))
     }
 
     private fun undoneTask(holder: ViewHolder) {
+        holder.binding.checkButton.elevation = 0F
         holder.binding.checkButton.setIconResource(R.drawable.ic_check)
         holder.binding.checkButton.text = null
         holder.binding.TvTaskName.setTextColor(Color.parseColor(Constant.notDoneColor))
@@ -103,4 +113,5 @@ class TasksAdapter(private var tasks: MutableList<Task>? = null) :
         holder.binding.verticalDivider.setBackgroundColor(Color.parseColor(Constant.notDoneColor))
         holder.binding.TvTimer.setTextColor(Color.BLACK)
     }
+
 }

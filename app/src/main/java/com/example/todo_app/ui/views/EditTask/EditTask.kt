@@ -31,7 +31,7 @@ class EditTask : BaseActivity<ActivityEditTaskBinding>() {
                 this,
                 { timePicker, i, i2 ->
                     time.setTime(i, i2)
-                    binding.EtTime.hint = time.formatTimeText()
+                    binding.EtTime.setText(time.formatTimeText())
 
                 },
                 time.get(Calendar.HOUR_OF_DAY),
@@ -62,7 +62,8 @@ class EditTask : BaseActivity<ActivityEditTaskBinding>() {
         task.description = if (binding.EtDetails.text
                 .isNullOrBlank()
         ) task.description else (binding.EtDetails.text.toString())
-        task.time = if(task.time==binding.EtTime.text.toString()||binding.EtTime.text.isNullOrBlank()) task.time else binding.EtTime.text.toString()
+        task.time = if(binding.EtTime.text.isNullOrBlank()) task.time
+        else binding.EtTime.text.toString()
     AppDataBase.getInstance().tasksDao().updateTask(task)
 
 

@@ -14,9 +14,14 @@ data class Task(
     var id: Int = 0,
     var tittle: String? = null,
     @ColumnInfo(index = true)
-    var date: Long? = null,
+    var dateTime: Long? = null,
     var time: String? = null,
     var description: String? = null,
-    var number : Int?=null,
     var isDone : Boolean ?=false,
+    var isAm : Boolean ?= null,
+    var number : Int ?=null
+
+
+
+
 ):Parcelable

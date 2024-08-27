@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
 import androidx.annotation.DrawableRes
@@ -22,12 +23,13 @@ import com.example.todo_app.databinding.ItemBuilderBinding
 import com.example.todo_app.ui.views.EditTask.EditTask
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.DayViewDecorator
+import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
 import java.util.Calendar
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
     val adapter = TasksAdapter()
-
     var selectedDate :Calendar? = Calendar.getInstance().apply {
         ignoreTime()
     }
@@ -45,6 +47,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
                 adapter.lastOpenSwipeLayout = null
             }
         })
+
+
+
+        binding.calenderView.setWeekDayTextAppearance(androidx.constraintlayout.widget.R.style.AlertDialog_AppCompat_Light)
 
         binding.calenderView.setDateSelected(
             CalendarDay.today(),

@@ -19,6 +19,6 @@ import com.example.todo_app.DataBase.model.Task
     @Query("Select * From Task ")
     fun getAllTask():List<Task>
 
-    @Query("select * from TASK where date=:date")
+    @Query("select * from TASK where dateTime=:date")
     fun gitTaskByDate(date : Long):List<Task>
 }

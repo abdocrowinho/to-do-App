@@ -1,7 +1,9 @@
 package com.example.todo_app.ui.views.fragments.addTask_fragment
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +22,7 @@ import com.example.todo_app.R
 import com.example.todo_app.databinding.FragmentAddTaskBinding
 import com.example.todo_app.databinding.FragmentAddTaskBindingImpl
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.time.Year
 import java.util.Calendar
 
@@ -59,13 +62,25 @@ class addTaskFragment : BottomSheetDialogFragment() {
                     description = binding.EtDescription.text.toString(),
 
                     time = time.formatTimeText(),
-                    date = date.timeInMillis
+                    dateTime = date.timeInMillis
 
 
 
                 )
             )
             setTaskAddedListener?.taskAddedListener()
+
+            val mydialog =  MaterialAlertDialogBuilder(requireContext(),R.style.MaterialAlertDialog_Rounded).setTitle("delete")
+                .setMessage("Task Added Successful")
+                .setNegativeButton("Accept", DialogInterface.OnClickListener { dialog, i ->
+                    dialog.dismiss()
+                    dismiss()
+
+
+                })
+
+            mydialog.show()
+
         }
     }
 
@@ -73,28 +88,28 @@ class addTaskFragment : BottomSheetDialogFragment() {
         var isValid = true
         if (binding.EtTittle.text.isNullOrBlank()
         ) {
-            binding.tilTittle.error = "pleas enter tittle"
+            binding.tilTittle.error = getString(R.string.pleas_enter_tittle)
             isValid = false
         } else {
             binding.tilTittle.error = null
         }
         if (binding.EtDescription.text.isNullOrBlank()
         ) {
-            binding.tilDescription.error = "pleas enter description"
+            binding.tilDescription.error = getString(R.string.pleas_enter_description)
             isValid = false
         } else {
             binding.tilDescription.error = null
         }
         if (binding.selectedDate.text == null
         ) {
-            binding.tilSelectedDate.error = "pleas enter date"
+            binding.tilSelectedDate.error = getString(R.string.pleas_enter_date)
             isValid = false
         } else {
             binding.tilDescription.error = null
         }
         if (binding.selectedTime.text == null
         ) {
-            binding.tilSelectItem.error = "pleas enter time"
+            binding.tilSelectItem.error = getString(R.string.pleas_enter_time)
             isValid = false
         } else {
             binding.tilSelectItem.error = null

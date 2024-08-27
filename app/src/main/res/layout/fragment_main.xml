@@ -45,6 +45,7 @@
             app:layout_constraintGuide_percent=".08" />
 
         <com.google.android.material.card.MaterialCardView
+
             android:id="@+id/calender_card"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -61,7 +62,9 @@
                 app:mcv_calendarMode="week"
                 app:mcv_dateTextAppearance="@style/customTextAppearance"
                 app:mcv_showOtherDates="all"
-                app:mcv_selectionColor="?attr/colorPrimary" />
+
+
+                />
 
         </com.google.android.material.card.MaterialCardView>
 
