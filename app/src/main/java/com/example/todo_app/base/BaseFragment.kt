@@ -17,6 +17,7 @@ abstract class BaseFragment<Vb : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = DataBindingUtil.inflate(
             inflater ,
             getLayoutId(), container,false

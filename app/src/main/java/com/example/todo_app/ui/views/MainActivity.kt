@@ -14,6 +14,7 @@ import com.example.todo_app.ui.views.fragments.main_fragment.MainFragment
 import com.example.todo_app.ui.views.fragments.settings_fragment.SettingsFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    var mainFragment:MainFragment ?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -25,19 +26,28 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 }
 
                 R.id.list_fragment -> {
-                    showFragment(MainFragment())
+                    mainFragment = MainFragment()
+                    showFragment(mainFragment!!)
                 }
 
 
             }
 
             return@setOnItemSelectedListener true
+
         }
         binding.bottomNavBar.selectedItemId = R.id.list_fragment
 
         binding.fabAdd.setOnClickListener {
-            val addTask = addTaskFragment()
-            addTask.show(supportFragmentManager, "")
+
+            val addTaskSheet = addTaskFragment()
+            addTaskSheet.setTaskAddedListener = addTaskFragment.TaskAddedListener {
+
+                mainFragment?.getTasksFromDataBase()
+            }
+
+
+            addTaskSheet.show(supportFragmentManager, "")
         }
     }
 

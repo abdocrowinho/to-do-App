@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="50dp"
-    app:cardCornerRadius="50dp"
-    app:cardElevation="0dp"
-    app:strokeColor="?attr/colorPrimary"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    >
+    <data>
+
+    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="30dp"
-        android:layout_marginBottom="20dp"
-        >
+        android:layout_marginBottom="20dp">
+
         <TextView
             android:id="@+id/Tv_addTask"
             android:layout_width="match_parent"
@@ -26,8 +24,8 @@
             android:text="@string/add_task"
             android:textColor="#5D9CEC"
             style="@style/primaryFont"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_tittle"
             android:layout_marginHorizontal="20dp"
@@ -37,61 +35,125 @@
             app:layout_constraintTop_toBottomOf="@id/Tv_addTask"
             app:boxStrokeColor="@color/text_input_layout_stroke_color"
             app:boxStrokeWidth="2dp"
+            app:hintTextColor="#5D9CEC"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-            app:boxBackgroundColor="?attr/colorOnPrimary"
-            >
+            app:boxBackgroundColor="?attr/colorOnPrimary">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Et_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="enter your task"
-                />
+                android:textColor="?attr/colorSecondaryVariant"
+                android:hint="@string/enter_your_task" />
         </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:id="@+id/Tv_hintSelectTime"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_description"
+            android:layout_marginHorizontal="20dp"
+            android:paddingBottom="30dp"
+            app:hintTextColor="#5D9CEC"
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/til_tittle"
-            android:text="Select time "
-            app:layout_constraintStart_toStartOf="@id/til_tittle"
-            style="@style/primaryFont"
-            android:textColor="?attr/colorOnSecondary"
-            android:textSize="18sp"/>
-        <TextView
+            app:boxStrokeColor="@color/text_input_layout_stroke_color"
+            app:boxStrokeWidth="2dp"
 
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="?attr/colorOnPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Et_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="?attr/colorSecondaryVariant"
+android:textColorHint="#5D9CEC"
+                android:hint="@string/description" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_selectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/til_description"
+            app:layout_constraintEnd_toEndOf="@id/til_description"
+
+            >
+            <TextView
+                android:id="@+id/Tv_SelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selecte_date"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_selectItem"
+            app:layout_constraintStart_toStartOf="@id/til_tittle"
+            app:layout_constraintTop_toBottomOf="@id/til_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Tv_hintSelectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/til_description"
+                android:text="@string/select_time"
+                app:layout_constraintStart_toStartOf="@id/til_tittle"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/selectedDate"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/selectedTime"
+            tools:text="12:30 AM "
+            android:textColor="?attr/colorSecondaryVariant"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp" />
+        <TextView
             android:id="@+id/selectedTime"
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/Tv_hintSelectTime"
-            android:text="12:30 AM "
+            app:layout_constraintTop_toBottomOf="@id/til_selectItem"
+            tools:text="30/8/2001"
+            android:textColor="?attr/colorSecondaryVariant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
 
         <com.google.android.material.button.MaterialButton
             android:text=""
-
             android:id="@+id/Bt_done"
             android:layout_marginTop="10dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:gravity="center"
+
+            android:textAlignment="center"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp"
+            android:layout_margin="20dp"
             android:elevation="3dp"
             app:cornerRadius="50dp"
             android:backgroundTint="#5D9CEC"
-            app:layout_constraintTop_toBottomOf="@id/selectedTime"
+            app:layout_constraintTop_toBottomOf="@id/selectedDate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintWidth_percent=".15"
-            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintHeight_percent=".15"
             app:icon="@drawable/ic_check"
-            />
+            app:iconTint="?attr/colorOnPrimary"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-</androidx.cardview.widget.CardView>
+</layout>
